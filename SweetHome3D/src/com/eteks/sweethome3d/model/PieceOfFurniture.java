@@ -35,9 +35,10 @@ public interface PieceOfFurniture {
    * Returns the description of this piece of furniture.
    */
   public abstract String getDescription();
-  
+
   /**
    * Returns the additional information associated to this piece, or <code>null</code>.
+   *
    * @since 4.2
    */
   public String getInformation();
@@ -64,9 +65,10 @@ public interface PieceOfFurniture {
 
   /**
    * Returns the elevation at which should be placed an object dropped on this piece.
-   * @return a percentage of the height of this piece. A negative value means that the piece 
-   *         should be ignored when an object is dropped on it. 
-   * @since 4.4 
+   *
+   * @return a percentage of the height of this piece. A negative value means that the piece
+   * should be ignored when an object is dropped on it.
+   * @since 4.4
    */
   public abstract float getDropOnTopElevation();
 
@@ -90,77 +92,85 @@ public interface PieceOfFurniture {
 
   /**
    * Returns the icon of this piece of furniture displayed in plan or <code>null</code>.
+   *
    * @since 2.2
    */
   public abstract Content getPlanIcon();
 
-    /**
+  /**
    * Returns the 3D model of this piece of furniture.
    */
   public abstract Content getModel();
-  
+
   /**
-   * Returns the rotation 3 by 3 matrix of this piece of furniture that ensures 
+   * Returns the rotation 3 by 3 matrix of this piece of furniture that ensures
    * its model is correctly oriented.
    */
-  public float [][] getModelRotation();
-  
+  public float[][] getModelRotation();
+
   /**
-   * Returns the shape used to cut out upper levels when they intersect with the piece   
+   * Returns the shape used to cut out upper levels when they intersect with the piece
    * like a staircase.
+   *
    * @since 3.4
    */
   public String getStaircaseCutOutShape();
-  
+
   /**
    * Returns the creator of this piece or <code>null</code>.
+   *
    * @since 4.2
    */
   public String getCreator();
-  
+
   /**
    * Returns <code>true</code> if the back face of the piece of furniture
    * model should be displayed.
    */
   public abstract boolean isBackFaceShown();
-  
+
   /**
    * Returns the color of this piece of furniture.
    */
   public abstract Integer getColor();
-  
+
   /**
    * Returns <code>true</code> if this piece is resizable.
    */
   public abstract boolean isResizable();
-  
+
   /**
    * Returns <code>true</code> if this piece is deformable. The width, depth and height
    * of a deformable piece may change independently from each other.
+   *
    * @since 3.0
    */
   public abstract boolean isDeformable();
 
   /**
    * Returns <code>false</code> if this piece should always keep the same color or texture.
+   *
    * @since 3.0
    */
   public abstract boolean isTexturable();
-  
+
   /**
-   * Returns the price of this piece of furniture or <code>null</code>. 
+   * Returns the price of this piece of furniture or <code>null</code>.
    */
   public abstract BigDecimal getPrice();
-  
+
   /**
-   * Returns the Value Added Tax percentage applied to the price of this piece of furniture. 
+   * Returns the Value Added Tax percentage applied to the price of this piece of furniture.
    */
   public abstract BigDecimal getValueAddedTaxPercentage();
-  
+
   /**
-   * Returns the price currency, noted with ISO 4217 code, or <code>null</code> 
+   * Returns the price currency, noted with ISO 4217 code, or <code>null</code>
    * if it has no price or default currency should be used.
+   *
    * @since 3.4
    */
   public abstract String getCurrency();
+
+  public abstract float getVolume();
 }
